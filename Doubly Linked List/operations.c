@@ -9,6 +9,7 @@ void addbeg();
 void deleteend();
 void deletespec();
 void deletebeg();
+void reverse();
 int i,n,a;
 struct node
 {
@@ -21,7 +22,7 @@ void main()
 {
     do
 	{
-		printf("\n OPTIONS \n 1.Insertion \n 2.Traversing \n 3.Searching \n 4.Addition at the end \n 5.Addition after a specific element \n 6.Addition at the beginning \n 7.Deletion at the end \n 8.Deletion of a specific element \n 9.Deletion at the beginning \n 0.Exit");
+		printf("\n OPTIONS \n 1.Insertion \n 2.Traversing \n 3.Searching \n 4.Addition at the end \n 5.Addition after a specific element \n 6.Addition at the beginning \n 7.Deletion at the end \n 8.Deletion of a specific element \n 9.Deletion at the beginning \n 10.Reverse of the linked list \n 0.Exit");
 		scanf("%d",&a);
 		switch(a)
 		{
@@ -43,10 +44,29 @@ void main()
 			break;
 			case 9: deletebeg();
 			break;
+			case 10: reverse();
+			break;
 			default: printf("Invalid Choice \n");
 			break;
 		}
 	}while(a!=0);
+}
+
+void reverse(){
+    current = head;
+    if(head==NULL){
+        printf("The linked list is empty");
+    }
+    else{
+        current = head;
+        while (current->next!=NULL){
+            current = current->next;
+        }
+        while(current!=NULL){
+            printf("\t <-%d-> \t",current->data);
+            current = current->prev; 
+        }
+    }
 }
 
 void insertion()
