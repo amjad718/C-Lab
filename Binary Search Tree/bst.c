@@ -5,7 +5,7 @@ struct node{
 	struct node *left;
 	struct node *right;
 };
-
+int n;
 struct node* set(int data){
 	struct node* newnode = (struct node*)malloc(sizeof(struct node));
 	newnode->data=data;
@@ -64,7 +64,7 @@ void main(){
 	int choice,data;
 	do{
 	
-		printf("Enter a choice : \n1.insertion of node\n2.Preorder traverse\n3.Inorder traverse\n4.Post order traverse \n5.Display root node\n0.Exit\n\n");
+		printf("Enter a choice : \n1.insertion of node\n2.Preorder traverse\n3.Inorder traverse\n4.Post order traverse \n5.Display root node\n 6.Creation 0.Exit\n\n");
 		scanf("%d",&choice);
 
 		switch(choice){
@@ -90,6 +90,15 @@ void main(){
 					 display(root);
 					 break;
 				 }
+			case 6 : {
+					printf("Enter the number of data you want to insert");
+					scanf("%d,&n");
+					for(i=0;i<n;i++){
+					printf("Enter the data :");
+				    	scanf("%d",&data);
+					root=insertion(root,data);}
+					break;
+					}
 			case 0 : {
 					printf("Exiting....!\n");
 					break;
